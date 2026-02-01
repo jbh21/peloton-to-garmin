@@ -55,6 +55,7 @@ jobs:
           },
           "Peloton": {
             "NumWorkoutsToDownload": ${{ github.event.inputs.workoutsToDownload || env.DEFAULT_WORKOUT_NUM }},
+             "ExcludeWorkoutTypes": [running]
           },
           "Garmin": {
             "Upload": true,
@@ -93,5 +94,6 @@ jobs:
         name: output
         path: ${{ env.OUTPUT_DIR }}
         if-no-files-found: error
+
 
 
